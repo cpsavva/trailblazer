@@ -10,7 +10,7 @@ module.exports = function(app){
 	app.get('/:state', function(request, response){
 		models.Park.findAll({
 			where: {
-				states: request.params.state
+				state: request.params.state
 			},
 		}).then(function(park_data){
 			response.render('index', {park_data})
