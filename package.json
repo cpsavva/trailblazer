@@ -17,6 +17,7 @@
     "handlebars": "^4.0.6",
     "method-override": "^2.3.7",
     "mysql": "^2.13.0",
-    "sequelize": "^3.30.2"
+    "sequelize": "^3.30.2",
+    "unirest": "^0.5.1"
   }
 }
