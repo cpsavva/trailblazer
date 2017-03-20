@@ -12,8 +12,19 @@ module.exports = function(app) {
             .header("X-Mashape-Key", "1EUZc9Yh0Dmsh3NULqLjzLCBf7rsp1iedcgjsnE14nUri24ZVA")
             .header("Accept", "text/plain")
             .end(function(result) {
-                var trail = result.body.places[0];               
-                res.render("index",{results:trail});
+                var trailList = result.body.places;                 
+                var trails=[]; 
+                trailList.forEach(function(arrayItem){
+                	var trail={
+                		trail_name:arrayItem.activities[0].name,
+                		description:arrayItem.activities[0].description,
+                		distance:arrayItem.activities[0].length,
+                		url:arrayItem.activities[0].url
+                	}
+                	trails.push(trail);
+                })       
+               	
+                res.render("index", { results: trails });
             });
 
     });
