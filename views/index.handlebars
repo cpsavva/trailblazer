@@ -112,8 +112,8 @@
         <h3 id="trailTitle">Trails</h3>
         {{#each results}}
         <div class="col s4 trailsColumn">
-          <h6>{{this.trailName}}</h6>
-          <p class="description">{{this.trailDescription}}</p>
+          <h6>{{this.activities[0].name}}</h6>
+          <p class="description">{{this.activities[0].description}}</p>
            <a href="#trailInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a>
            {{/each}}
           <!-- End Express HandleBars -->

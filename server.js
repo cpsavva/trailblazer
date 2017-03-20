@@ -25,6 +25,7 @@ app.set('view engine', 'handlebars');
 
 /*require routes*/
 require('./routes/park-routes.js')(app);
+require('./routes/trail-routes.js')(app);
 
 /*require inital nps database*/
 var nps = require('./database/nps.js');
