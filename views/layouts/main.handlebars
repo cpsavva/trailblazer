@@ -3,8 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>TrailBlazer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Emily Sun Portfolio</title>
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <!--javascript file-->
+    <script type="text/javascript" src="/js/js.js"></script>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link href="/assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/assets/css/style2.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/assets/css/style21.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
 	{{{ body }}}
 </body>
+  <script type="text/javascript">
+     $(document).ready(function(){
+      $('.parallax').parallax();
+      $('.modal').modal();
+      $(".dropdown-button").dropdown();
+      //hides parkDisplay on first display
+      // $("#parkDisplay").hide();
+      //hides parkDisplay on first display
+      // $("#parallax2").hide();
+      $( "#submitBtn" ).click(function() {
+     		console.log($('#stateSelection').val())
+        $("#parkDisplay").show();;
+      });
+      $(".parkSubmitBtn").click(function(){
+        $("#parallax2").show();
+      });
+    });     
+  </script>
 	</html>

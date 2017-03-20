@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 /*model sync */
 const models = require('./models');
-models.sequelize.sync({force:true});
+models.sequelize.sync();
 
 /*use of /public content */
 app.use(express.static(__dirname + '/public'));
@@ -29,9 +29,11 @@ require('./routes/park-routes.js')(app);
 /*require inital nps database*/
 var nps = require('./database/nps.js');
 
-
+app.get('/', function(request,response){
+	response.render('index')
+})
 /*starting express server*/
 app.listen(port, function(){
 	console.log("I am working")
-	nps.NPSaxios();
+	// nps.NPSaxios();
 });

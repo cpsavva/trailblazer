@@ -3,9 +3,9 @@
 var axios = require('axios');
 var db = require('../models');
 // var port = process.env.PORT || 3000;
-db.sequelize.sync({
-    force: true
-});
+// db.sequelize.sync({
+//     force: true
+// });
 
 function parkFilter(parks) {
     return parks.filter(function(p, i, arr) {

@@ -1,0 +1,199 @@
+body{
+  /*background-color: #0d0d0d;*/
+  background-color: #3f3f3f;
+  padding:0;
+  margin:0;
+  width:100%;
+}
+
+
+a{
+  color: #f3da72;
+}
+
+h1 h2 h3 h4 h5 h6{
+  font-family: 'Poppins', sans-serif;
+  font-weight:bold;
+}
+
+h3{
+  font-size:70px;
+  margin:0;
+  padding:10px;
+}
+
+.container{
+  padding:0px;
+  margin:0px;
+  width:100%;
+  position:relative;
+}
+
+.row{
+  padding:0px;
+  margin:0px;
+  width:100%;
+}
+
+.row .col.s12{
+  padding:0;
+  margin:0;
+  width:100%;
+}
+
+.parallax-container{
+  padding:0;
+  margin:0;
+}
+
+#submitBtn{
+  border:1px solid white;
+}
+
+
+
+
+/*=========================Model Styling=======================*/
+  
+/*modal button */ 
+#modalBtn{
+  margin:30px;
+  
+}
+
+#menuIcon{
+ color:#430051; 
+}
+
+/*modal when opened*/
+.modal.open{
+    background-color: #1A0315;
+    opacity:.2;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+    top: 0 !important;   
+}
+
+.modal-content{
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size:40px;
+  color:#f3da72;
+}
+
+.modal-content li{
+  margin-bottom:100px;
+}
+
+.modal-content:hover{
+  color:#d8b31c;
+}
+
+
+
+/*================================Parralax Styling================*/
+.parallax-container{
+  margin-top:0px;
+  height:620px;
+}
+.parallax img{
+  width:100%;
+  opacity:.8;
+
+}
+
+
+/*=======================Parralax Elements Styling======================*/
+
+#titleColumn{
+  margin-top:80px;
+  text-align:center;
+}
+#titleColumn h3{
+  text-shadow: 2px 2px gray;
+  color:#ffffff;
+}
+
+#stateSelection{
+  width:30%;
+  margin: auto;
+}
+
+.select-dropdown active {
+  opacity:.5;
+}
+
+
+/*================================Park Display================*/
+#trailTitle{
+  text-align:center;
+  color:#ffffff;
+}
+
+#parkDisplay{
+  height:100%;
+  padding-bottom:30px;
+  padding-right:0px;
+  padding-left:30px;
+}
+
+
+#parkDisplay .s4 {
+  width:30%;
+  padding-left:15px;
+  padding-right:15px;
+  margin-right:30px;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+#parkDisplay a{
+  text-align:center;
+}
+
+
+.parkColumn{
+  text-align:left;
+}
+
+  
+/*================================Trail Display================*/
+#trailTitle{
+  text-align:center;
+  color:#ffffff;
+}
+
+#parallax2{
+  height:100%;
+  padding-bottom:30px;
+  padding-right:0px;
+  padding-left:30px;
+}
+
+#parkDisplay{
+  text-align:center;
+  background-color:#3f3f3f;
+  margin:10px;
+  padding:0;
+  width:100%;
+  height:100%;
+}
+
+#parallax2 .s4 {
+  width:30%;
+  padding-left:15px;
+  padding-right:15px;
+  margin-right:30px;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+
+.trailsColumn{
+  background-color:rgba(255, 255, 255,.5);
+  text-align:justify;
+}
+
+
+   
