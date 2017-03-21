@@ -107,17 +107,20 @@
   <!-- ===================Parralax 2 ===================-->
     <div class="parallax-container" id="parallax2">
       <div class="parallax"><img src="/assets/css/img/trail.jpg"></div>
-
-      <div class="row">
+      
+      
         <h3 id="trailTitle">Trails</h3>
         {{#each results}}
+        <div class="row">
         <div class="col s4 trailsColumn">
           <h6>{{this.trail_name}}</h6>
           <p class="description">{{this.description}}</p>
            <a href="#trailInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a>
-           {{/each}}
+           </div>
+          {{/each}}
           <!-- End Express HandleBars -->
-        </div>
+        
+
       </div>
 
       <!-- Modal Structure -->
