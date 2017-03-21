@@ -14,9 +14,10 @@ module.exports = function(app){
 				state: request.query.state
 			},
 		}).then(function(park_data){
-			response.render('index', {park_data})
+			response.render('index', {park_data});
+
 		})
-		// response.redirect('/');
+		
 	});
 
 

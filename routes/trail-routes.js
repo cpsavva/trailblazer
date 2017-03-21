@@ -24,7 +24,7 @@ module.exports = function(app) {
                 	trails.push(trail);
                 })       
                	
-                res.render("index", { results: trails });
+                res.render("trails", { results: trails });
             });
 
     });
