@@ -5,7 +5,7 @@ var unirest = require('unirest');
 
 /*routes*/
 module.exports = function(app) {
-    app.get("/:latitude/:longitude", function(req, res) {
+    app.get("/api/:latitude/:longitude", function(req, res) {
         var latitude = req.params.latitude;
         var longitude = req.params.longitude;
         unirest.get("https://trailapi-trailapi.p.mashape.com/?lat=" + latitude + "&limit=25&lon=" + longitude + "&q[activities_activity_type_name_eq]=hiking&radius=50")
