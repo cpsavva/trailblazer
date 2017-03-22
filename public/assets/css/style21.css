@@ -137,19 +137,21 @@ h3{
   color:#ffffff;
 }
 
-#trailsContainer{
+#trailsContainer, #parkContainer{
   height:250px;
   padding-bottom:30px;
   padding-right:20px;
   padding-left:20px;
-  background-color:rgba(255, 255, 255,.7);
+  /*background-color:rgba(255, 255, 255,.7);*/
+  background-color:rgba(63,63,63,.7);
   text-align:justify;
   width:30%;
   /*padding-left:15px;
   padding-right:15px;*/
   margin-left:10px;
   margin-bottom:6px;
-  color: black;
+  color: white;
+  overflow: scroll;
 
 }
 #parkDisplay{
@@ -162,7 +164,11 @@ h3{
 }
 
 #parkDisplay h3{
-  color:#ffffff;
+  /*color:#ffffff;*/
+  color: #3f3f3f;
+}
+#parkTitle{
+  color: #3f3f3f;
 }
    
 
@@ -179,4 +185,12 @@ h3{
 .trails {
   background-image: url('./img/trail.jpg');
 }
-   
+.parkPage{
+  background-image: url('./img/white.jpg');
+}
+
+.info{
+  float: right;
+  top: 0px;
+  right:0px;
+}
