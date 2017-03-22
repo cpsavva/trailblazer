@@ -1,5 +1,5 @@
       <!-- Dropdown Structure -->
-      <ul id="dropdown1" class="dropdown-content">
+{{!--       <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">Log In</a></li>
         <li><a href="#!">Sign Up</a></li>
       </ul>
@@ -11,14 +11,14 @@
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
         </div>
-      </nav>
+      </nav> --}}
 
        <!-- Title -->
 {{!--       <div class="row">
         <div class="col s12" id="titleColumn"> --}}
           {{!-- <h3>Trail Blazer</h3> --}}
           <!-- State Selection -->
-          <form method="GET" action='/parks'>
+{{!--           <form method="GET" action='/parks'>
             <div class="input-field" id="stateSelection">
             <select name='state'>
               <option value="" disabled selected>Select State</option>
@@ -51,24 +51,26 @@
               <option value="VI">US Virgin Islands</option>
               <option value="AS">American Samoa</option>
             </select>
-            <button type ='submit' value='submit'class="waves-effect waves-light btn N/A transparent" id="submitBtn" {{!-- href="#parkDisplay" --}}>Submit</button>
+            <button type ='submit' value='submit'class="waves-effect waves-light btn N/A transparent" id="submitBtn" >Submit</button>
           </div>
-     </form> 
+     </form>  --}}
 {{!--       </div>  
     </div>
   </div> --}}
 
-      
-  <div class="container" id="parkDisplay">
+<div class="parkPage">
+  {{!-- <div class="container" id="parkDisplay"> --}}
     <div class="row">
-      <h3>Parks</h3>
+      <h3 id="parkTitle">Parks</h3>
+
       <!-- Park Results -->
       {{#each park_data}}
-      <div class="col s4 parkColumn">
+      <div class="col s4 parkColumn" id="parkContainer">
+      <span class="info"><a href="#trailInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a></span>
         <h6>{{this.park_name}}</h6>
         <p>{{this.description}}</p>
         {{!-- <a class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">More Info</a> --}}
-         <a href="#trailInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a>
+        
         <form action='/api/{{this.latitude}}/{{this.longitude}}'>
 {{!--         <input type="hidden" name="longitude" value="{{this.longitude}}">
         <input type="hidden" name="latitude" value="{{this.latitude}}"> --}}
@@ -77,6 +79,7 @@
       </div>
       {{/each}}
     </div>
+  {{!-- </div> --}}
   </div>
 
 {{!-- <!-- ===================Parralax 2 ===================-->
