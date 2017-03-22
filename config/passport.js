@@ -1,10 +1,9 @@
-var passport = require('passport'),
-LocalStrategy = require('passport-local'),
-FacebookStrategy = require('passport-facebook'),
-db = require('../models');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+var FacebookStrategy = require('passport-facebook');
+var db = require('../models');
 
 passport.serializeUser(function(user, done) {
-  console.log('serializeUser', user);
   done(null, user);
 });
 
@@ -33,6 +32,7 @@ passport.use(new LocalStrategy(function(username, password, done) {
 
 
 passport.use(new FacebookStrategy({
+
     clientID: '1214087665378938',
     clientSecret: 'd37a0a54a9dc93076dadb1c92ca5a784',
     callbackURL: "http://localhost:3000/auth/facebook/callback",

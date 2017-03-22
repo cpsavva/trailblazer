@@ -4,18 +4,11 @@ const passport = require('passport');
 const db = require('../models');
 
 routes.get('/', (req, res) => {
-  res.render('index');
-});
-
-routes.get('/index', function(req, res, next) {
-  console.log('going to homepage'); next(null);
-}, middleware.authenticated, function(req, res) {
+  console.log('user', req.user);
   res.render('index', {
     user: req.user
   });
 });
-
-
 
 //login a new user
 routes.post('/authenticate', passport.authenticate('local', {
@@ -43,7 +36,7 @@ routes.post('/signup', function(req, res) {
           if (err) {
             return res.redirect('/signup');
           } else {
-            res.redirect('/dashboard');    
+            res.redirect('/index');    
           }
         });
         
@@ -60,7 +53,7 @@ routes.get('/auth/facebook',
     console.log('in auth facebook');
     next();
   },
-  passport.authenticate('facebook'));
+  passport.authenticate('facebook', { scope: ['email']}));
 
 routes.get('/auth/facebook/callback',
   function(req, res, next) {
@@ -71,7 +64,7 @@ routes.get('/auth/facebook/callback',
   function(req, res) {
     console.log('in auth callback');
     // Successful authentication, redirect home.
-    res.redirect('/index');
+    res.redirect('/');
   });
 
 module.exports = routes;
