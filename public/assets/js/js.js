@@ -3,7 +3,5 @@ $(document).ready(function() {
         $('.modal').modal({
         	opacity: .0, // Opacity of modal background
         });
-
-
 });
 

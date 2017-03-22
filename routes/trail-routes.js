@@ -22,7 +22,9 @@ module.exports = function(app) {
                             trail_name: arrayItem.activities[0].name,
                             description: arrayItem.activities[0].description,
                             distance: arrayItem.activities[0].length,
-                            url: arrayItem.activities[0].url
+                            url: arrayItem.activities[0].url,
+                            latitude:arrayItem.lat,
+                            longitude:arrayItem.lon
                         }
                         trails.push(trail);
                     })

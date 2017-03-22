@@ -82,7 +82,6 @@
       <!-- Park Results -->
       {{#each park_data}}
       <div class="col s4 parkColumn" id="parkContainer">
-      <span class="info"><a href="#trailInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a></span>
         <h6>{{this.park_name}}</h6>
         <p>{{this.description}}</p>
         {{!-- <a class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">More Info</a> --}}
@@ -99,17 +98,3 @@
   </div>
 
 
-<!-- Here Just For NoW!!!-->
-<!-- Modal Structure -->
-  <div id="trailInfoModal" class="modal">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat right"><i class="large material-icons" >toc</i></a>
-    <!-- Modal Content -->
-    <div class="modal-content">
-      <!--Beginning of Google Maps ADDED-->
-      <div class="row" id="mapRow">
-        <div class="col-xs-6" id="map"></div>
-        <!-- <div class="col-xs-6" id="weather"></div> -->
-      </div>
-    </div> 
-  </div>
-</div>
