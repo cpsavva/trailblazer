@@ -12,6 +12,7 @@ module.exports = function(app) {
             .header("X-Mashape-Key", "1EUZc9Yh0Dmsh3NULqLjzLCBf7rsp1iedcgjsnE14nUri24ZVA")
             .header("Accept", "text/plain")
             .end(function(result) {
+
                 var trailList = result.body.places;
 
                 var trails = [];
@@ -33,7 +34,6 @@ module.exports = function(app) {
                 }
                 
                 res.render("index", { results: trails });
-
 
             });
 

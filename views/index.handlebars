@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <!-- ==============Park Name List ===================-->
+{{!--   <!-- ==============Park Name List ===================-->
   <div class="container" id="parkDisplay">
     <div class="row">
       <h3>Parks</h3>
@@ -75,16 +75,18 @@
         <p>{{this.description}}</p>
         <a class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">More Info</a>
         <form action='/api/{{this.latitude}}/{{this.longitude}}'>
-        <input type="hidden" name="longitude" value="{{this.longitude}}">
-        <input type="hidden" name="latitude" value="{{this.latitude}}">
-        <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
+
+        {{!-- <input type="hidden" name="longitude" value="{{this.longitude}}">
+{{!--         <input type="hidden" name="latitude" value="{{this.latitude}}"> --}}
+          <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
+
         </form>
       </div>
       {{/each}}
-    </div>
-  </div>
+    </div> --}}
+  {{!-- </div>  --}}
 
-  <!-- ===================Parralax 2 ===================-->
+  {{!-- <!-- ===================Parralax 2 ===================-->
     <div class="parallax-container" id="parallax2">
       <div class="parallax"><img src="/assets/css/img/trail.jpg"></div>
       
@@ -120,7 +122,7 @@
           </div>
         </div> 
       </div>
-    </div>
+    </div> --}}
 
 
 {{!-- {{#each park_data}}
