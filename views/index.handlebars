@@ -75,9 +75,11 @@
         <p>{{this.description}}</p>
         <a class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">More Info</a>
         <form action='/api/{{this.latitude}}/{{this.longitude}}'>
+
         {{!-- <input type="hidden" name="longitude" value="{{this.longitude}}">
 {{!--         <input type="hidden" name="latitude" value="{{this.latitude}}"> --}}
-      {{!--   <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
+          <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
+
         </form>
       </div>
       {{/each}}
@@ -93,9 +95,10 @@
         {{#each results}}
         <div class="row">
         <div class="col s4 trailsColumn">
-          <h6>{{this.trail_name}}</h6>
+          <h4>{{this.trail_name}}</h4>
           <p class="description">{{this.description}}</p>
-           <a href="#trailInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a>
+          <p>Distance: </p><p>{{this.distance}}</p>
+          <a href={{this.url}} id="modalBtn" target="_blank"><i class="small material-icons" id="trailsBtn">info_outline</i></a>
 
 
            </div>
