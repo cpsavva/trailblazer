@@ -58,7 +58,7 @@ if (process.env.NODE_ENV === 'development') {
 
 /*require routes*/
 require('./routes/park-routes.js')(app);
-// require('./routes/trail-routes.js')(app);
+require('./routes/trail-routes.js')(app);
 app.use('/', routes);
 
 
