@@ -4,8 +4,6 @@ $(document).ready(function() {
         	opacity: .0, // Opacity of modal background
         });
 
-        $('#submitBtn').click(function(){
-        	$('#parallax1').toggle();
-        });
+
 });
 

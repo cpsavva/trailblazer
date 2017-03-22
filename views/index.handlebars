@@ -57,7 +57,7 @@
               <option value="VI">US Virgin Islands</option>
               <option value="AS">American Samoa</option>
 	          </select>
-	          <button type ='submit' value='submit'class="waves-effect waves-light btn N/A transparent" id="submitBtn" href="#parkDisplay">Submit</button>
+	          <button type ='submit' value='submit'class="waves-effect waves-light btn N/A transparent" id="submitBtn" {{!-- href="#parkDisplay" --}}>Submit</button>
         	</div>
      </form> 
       </div>  
@@ -76,13 +76,13 @@
         <a class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">More Info</a>
         <form action='/api/{{this.latitude}}/{{this.longitude}}'>
         {{!-- <input type="hidden" name="longitude" value="{{this.longitude}}">
-        <input type="hidden" name="latitude" value="{{this.latitude}}"> --}}
-        <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
+{{!--         <input type="hidden" name="latitude" value="{{this.latitude}}"> --}}
+      {{!--   <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
         </form>
       </div>
       {{/each}}
-    </div>
-  </div> --}}
+    </div> --}}
+  {{!-- </div>  --}}
 
   {{!-- <!-- ===================Parralax 2 ===================-->
     <div class="parallax-container" id="parallax2">

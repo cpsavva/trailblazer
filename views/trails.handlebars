@@ -1,4 +1,7 @@
-        <!-- Dropdown Structure -->
+  <div class="trails" id="parallax2">
+    {{!-- <div class="parallax">
+      <img src="/assets/css/img/hiking.jpeg">
+    </div>   --}}   <!-- Dropdown Structure -->
       <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">Log In</a></li>
         <li><a href="#!">Sign Up</a></li>
@@ -14,18 +17,20 @@
       </nav>
 
 <!-- ===================Parralax 2 ===================-->
-    <div class="parallax-container" id="parallax2">
-      <div class="parallax"><img src="/assets/css/img/trail.jpg"></div>
-      <div class="row">
-        <h3 id="trailTitle">Trails</h3>
+
+    <div class="row" id="trailsRow">
+
+      <h3 id="trailTitle">Trails</h3>
+
         {{#each results}}
-        <div class="col s4 trailsColumn">
+        <div class="col s4 trailsColumn" id='trailsContainer'>
           <h6>{{this.trail_name}}</h6>
           <p class="description">{{this.description}}</p>
            <a href="#trailInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a>
         </div>
         {{/each}}
-      </div>
+    </div>
+  </div>
 
 
 
