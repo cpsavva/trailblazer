@@ -5,20 +5,20 @@
       </div>
 
       <!-- Dropdown Structure -->
-      {{!-- <ul id="dropdown1" class="dropdown-content">
-       <li><a href="#!">{{user.username}}</a></li>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">{{user.username}}</a></li>
         <li><a href="/auth/facebook">Log In</a></li>
         <li><a href="/signup">Sign Up</a></li>
       </ul>
       <nav class="N/A transparent z-depth-0">
         <div class="nav-wrapper">
-          <!-- <a href="#!" class="brand-logo">Logo</a> -->
+          <a href="#!" class="brand-logo"><img src="/assets/css/img/logo.png"></a>
           <ul class="right hide-on-med-and-down">
             <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="/" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
           </ul>
         </div>
-      </nav> --}}
+      </nav>
 
        <!-- Title -->
       <div class="row">
@@ -64,71 +64,3 @@
       </div>  
     </div>
   </div>
-
-{{!--   <!-- ==============Park Name List ===================-->
-  <div class="container" id="parkDisplay">
-    <div class="row">
-      <h3>Parks</h3>
-      <!-- Park Results -->
-      {{#each park_data}}
-      <div class="col s4 parkColumn">
-        <h6>{{this.park_name}}</h6>
-        <p>{{this.description}}</p>
-        <a class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">More Info</a>
-        <form action='/api/{{this.latitude}}/{{this.longitude}}'>
-
-        {{!-- <input type="hidden" name="longitude" value="{{this.longitude}}">
-{{!--         <input type="hidden" name="latitude" value="{{this.latitude}}"> --}}
-{{!--           <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
-
-        </form>
-      </div>
-      {{/each}}
-    </div> --}} --}}
-  {{!-- </div>  --}}
-
-  {{!-- <!-- ===================Parralax 2 ===================-->
-    <div class="parallax-container" id="parallax2">
-      <div class="parallax"><img src="/assets/css/img/trail.jpg"></div>
-      
-      
-        <h3 id="trailTitle">Trails</h3>
-        {{#each results}}
-        <div class="row">
-        <div class="col s4 trailsColumn">
-          <h4>{{this.trail_name}}</h4>
-          <p class="description">{{this.description}}</p>
-          <p>Distance: </p><p>{{this.distance}}</p>
-          <a href={{this.url}} id="modalBtn" target="_blank"><i class="small material-icons" id="trailsBtn">info_outline</i></a>
-
-
-           </div>
-          {{/each}}
-          <!-- End Express HandleBars -->
-        
-
-
-
-      </div>
-
-      <!-- Modal Structure -->
-      <div id="trailInfoModal" class="modal">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat right"><i class="large material-icons" >toc</i></a>
-        <!-- Modal Content -->
-        <div class="modal-content">
-          <!--Beginning of Google Maps ADDED-->
-          <div class="row" id="mapRow">
-            <div class="col-xs-6" id="map"></div>
-            <!-- <div class="col-xs-6" id="weather"></div> -->
-          </div>
-        </div> 
-      </div>
-    </div> --}}
-
-
-{{!-- {{#each park_data}}
-	<p>{{this.park_name}}</p>
-	<p>{{this.description}}</p>
-	<p>{{this.weatherInfo}}</p>
-	<p>{{this.url}}</p>
-{{/each}} --}}

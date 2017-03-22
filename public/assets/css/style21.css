@@ -1,9 +1,10 @@
 body{
   /*background-color: #0d0d0d;*/
-  background-color: #3f3f3f;
+  background-color: #ffffff;
   padding:0;
   margin:0;
   width:100%;
+  height:100%;
   color: white
 }
 
@@ -27,6 +28,7 @@ h3{
   padding:0px;
   margin:0px;
   width:100%;
+  height:100%;
   position:relative;
 }
 
@@ -34,12 +36,14 @@ h3{
   padding:0px;
   margin:0px;
   width:100%;
+  height:100%;
 }
 
 .row .col.s12{
   padding:0;
   margin:0;
   width:100%;
+  height:100%;
 }
 
 .parallax-container{
@@ -47,7 +51,23 @@ h3{
   margin:0;
 }
 
+/*=========================Navbar Styling=======================*/
+nav-wrapper{
+  /*padding-left:30px;*/
+}
+.brand-logo img{
+  margin-left:30px;
+  margin-top:15px;
+  width:8%;
+}
 
+.dropdown-button {
+  color:#212121;
+}
+
+#menuIcon{
+ color:#430051; 
+}
 
 
 /*=========================Model Styling=======================*/
@@ -56,10 +76,6 @@ h3{
 #modalBtn{
   margin:30px;
   
-}
-
-#menuIcon{
- color:#430051; 
 }
 
 /*modal when opened*/
@@ -124,32 +140,22 @@ h3{
 
   
 /*================================Park Display================*/
-#trailsContainer, .s4 {
-  width:33%;
-  padding-left:15px;
-  padding-right:15px;
-  margin-left:4px;
-  margin-bottom:6px;
-}
 
-#trailTitle{
-  text-align:center;
-  color:#ffffff;
-}
 
 #trailsContainer, #parkContainer{
   height:250px;
+  padding-top:20px;
   padding-bottom:30px;
   padding-right:20px;
   padding-left:20px;
   /*background-color:rgba(255, 255, 255,.7);*/
-  background-color:rgba(63,63,63,.7);
+  background-color:rgba(63,63,63,.8);
   text-align:justify;
   width:30%;
   /*padding-left:15px;
   padding-right:15px;*/
   margin-left:10px;
-  margin-bottom:6px;
+  margin-bottom:10px;
   color: white;
   overflow: scroll;
 
@@ -166,27 +172,19 @@ h3{
 #parkDisplay h3{
   /*color:#ffffff;*/
   color: #3f3f3f;
+  text-shadow: 2px 2px gray;
 }
 #parkTitle{
   color: #3f3f3f;
-}
-   
 
-/*.titleColumn{
-  background-color:rgba(255, 255, 255,.5);
-  text-align:justify;
-}*/
-
-#trailsRow{
-  padding-left:70px;
 }
 
-
-.trails {
-  background-image: url('./img/trail.jpg');
-}
-.parkPage{
+#parkPage{
+  text-align:center;
+  padding-left:30px;
+  padding-bottom:30px;
   background-image: url('./img/white.jpg');
+  height:200%;
 }
 
 .info{
@@ -194,3 +192,48 @@ h3{
   top: 0px;
   right:0px;
 }
+   
+
+/*.titleColumn{
+  background-color:rgba(255, 255, 255,.5);
+  text-align:justify;
+}*/
+#trailsContainer, .s4 {
+  width:33%;
+  padding-left:15px;
+  padding-right:15px;
+  margin-left:4px;
+  margin-bottom:6px;
+}
+
+#trailsRow{
+  padding-left:30px;
+  padding-right:30px;
+}
+
+/*================================Trails Display================*/
+.trails {
+  background-image: url('./img/trail.jpg');
+  opacity:.9;
+  padding-bottom:30px;
+}
+
+
+#trailTitle{
+  text-align:center;
+  color:#ffffff;
+  text-shadow: 2px 2px gray;
+}
+
+
+
+
+/*===================Map Div=====================*/
+
+#map{
+  margin-left:30px;
+  padding:10px;
+  width:50%;
+  height:500px;
+}
+

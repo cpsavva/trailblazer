@@ -7,10 +7,10 @@
     <title>Emily Sun Portfolio</title>
     <!--Jquery-->
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
 
     <!--javascript file-->
-    <script type="text/javascript" src="/js/js.js"></script>
+    <script type="text/javascript" src="/assets/js/js.js"></script>
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
@@ -21,26 +21,49 @@
     <link href="/assets/css/style21.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<ul id="dropdown1" class="dropdown-content">
-       <li><a href="#!">{{user.username}}</a></li>
-        <li><a href="/auth/facebook">Log In</a></li>
-        <li><a href="/signup">Sign Up</a></li>
+  {{!-- <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">{{user.username}}</a></li>
+    <li><a href="/auth/facebook">Log In</a></li>
+    <li><a href="/signup">Sign Up</a></li>
+  </ul>
+  <nav class="N/A transparent z-depth-0">
+    <div class="nav-wrapper">
+      <!-- <a href="#!" class="brand-logo">Logo</a> -->
+      <ul class="right hide-on-med-and-down">
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="/" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
-      <nav class="N/A transparent z-depth-0">
-        <div class="nav-wrapper">
-          <!-- <a href="#!" class="brand-logo">Logo</a> -->
-          <ul class="right hide-on-med-and-down">
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="/" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
-          </ul>
-        </div>
-      </nav>
+    </div>
+  </nav> --}}
 	{{{ body }}}
 </body>
   <script type="text/javascript">
-     $(document).ready(function(){
+    //=====================Map=====================
+    var map;
+    // var latitude = ParseInt($(".latitude").val());
+    // var longitude= ParseInt($(".longitude").val());
+    function initMap() {
+      console.log('in initMap', document.getElementById('map'));
+      map = new google.maps.Map(document.getElementById('map'), {
+        // center: {lat:latitude, lng: longitude},
+        center: {lat: -34.397, lng: 150.644},
+        //Need to find someway to grab latitude and longtitude
+        zoom: 11
+        });
+      infoWindow = new google.maps.InfoWindow();
+    };
+
+    // google.maps.event.addDomListener(window, 'load', initialize);
+    // google.maps.event.addDomListener(window, "resize", function() {
+    //  var center = map.getCenter();
+    //  google.maps.event.trigger(map, "resize");
+    //  map.setCenter(center); 
+    // });
+    
+    $(document).ready(function(){
       $('.parallax').parallax();
       $('.modal').modal();
+      $('select').material_select();
       $(".dropdown-button").dropdown();
       //hides parkDisplay on first display
       // $("#parkDisplay").hide();
@@ -55,4 +78,5 @@
       });
     });     
   </script>
+  <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtd0Rm6EoowNo16BoCBpQwxqgv40Z5P0U&libraries=places&callback=initMap"></script>
 	</html>
