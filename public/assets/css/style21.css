@@ -237,3 +237,66 @@ nav-wrapper{
   height:500px;
 }
 
+
+
+/*===================================Login Modal======================*/
+
+#introRow{
+  text-align:center;
+  margin-bottom:10px;
+  /*background-image: url("img/modalTrail.jpg");
+  background-color: #ffffff;
+  background-opacity:60px;*/
+}
+
+#footerRow{
+ text-align:center; 
+}
+
+#loginModal p {
+  font-size:12px;
+}
+
+#loginModal.open{
+  background-color: #1A0315;
+  opacity:.2;
+  width: 80%;
+  max-height: 100%;
+  height: 100%;
+  top: 60 !important;   
+}
+
+
+#loginRow {
+  background-color: #ffffff;
+  padding:10px;
+}
+
+#loginForm{
+  background-color: #6d6d6d;
+  padding:20px;
+}
+
+
+#facebookLogin{
+  text-align:center;
+}
+
+#submit{
+  width:100%;
+  font-size:16px;
+}
+
+#facebookLogin{
+  text-align:center;
+}
+
+#facebookLogin a{
+  font-size:16px;
+}
+
+
+#footerRow{
+  font-size:16px;
+}
+

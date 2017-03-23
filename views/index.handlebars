@@ -7,7 +7,7 @@
       <!-- Dropdown Structure -->
       <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">{{user.username}}</a></li>
-        <li><a href="/auth/facebook">Log In</a></li>
+        <li><a href="#loginModal">Log In</a></li>
         <li><a href="/signup">Sign Up</a></li>
       </ul>
       <nav class="N/A transparent z-depth-0">
@@ -58,9 +58,58 @@
               <option value="VI">US Virgin Islands</option>
               <option value="AS">American Samoa</option>
 	          </select>
-	          <button type ='submit' value='submit'class="waves-effect waves-light btn N/A transparent" id="submitBtn">Submit</button>
-        	</div>
-     </form> 
-      </div>  
+	           <button type ='submit' value='submit'class="waves-effect waves-light btn N/A transparent" id="submitBtn">Submit</button>
+        	  </div>
+          </form> 
+        </div>  
+      </div>
+
+      {{!-- Modal --}}
+      <!-- Modal Structure -->
+    <div id="loginModal" class="modal">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat right"><i class="large material-icons" >toc</i></a>
+      <!-- Modal Content -->
+      <div class="modal-content" id="loginModalContent">
+        <!--Beginning of Google Maps ADDED-->
+        <div class="row" id="introRow">
+          <div class="col s12">
+            <h5>Log Into to your Account to:</h5>
+            <p>Save trails to your account</p>
+            <p>View your favourite trails</p>
+          </div>
+        </div>
+
+        <div class="row" id="loginRow">
+          <div class="col s6" id="manualInput">
+            <form id="loginForm">
+              <div class="row">
+                <div class="input-field">
+                  <input id="name" type="text" class="validate" required="required">
+                  <label for="name">Username</label>
+                </div>
+                <div class="input-field">
+                  <input id="name" type="text" class="validate" required="required">
+                  <label for="name">Password</label>
+                </div>
+                <a class="waves-effect waves-light btn" href="#modal1"  id = "submit">Submit</a>
+              </div>
+            </form>
+          </div>
+
+          <div class="col s6 center-align" id="facebookLogin">
+            <p>Login With Facebook</p>
+            <a href="/auth/facebook" class="btn btn-primary blue darken-3" id="#facebookSubmit"><span class="fa fa-facebook"></span> Continue with Facebook </a>
+          </div>
+
+        </div>
+    
+        <div class="row" id="footerRow">
+          <div class="col s12">
+            <a>Forgot Your Password?</a>
+            <p>Don't Have an account? &nbsp;<span><a>Register here</a></span></p>
+          </div> 
+        </div>
+      </div> 
     </div>
+    {{!-- End Of Modal --}}
   </div>
