@@ -1,24 +1,17 @@
-      <!-- Dropdown Structure -->
-{{!--       <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">Log In</a></li>
-        <li><a href="#!">Sign Up</a></li>
-      </ul>
-      <nav class="N/A transparent z-depth-0">
-        <div class="nav-wrapper">
-          <!-- <a href="#!" class="brand-logo">Logo</a> -->
-          <ul class="right hide-on-med-and-down">
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
-          </ul>
-        </div>
-      </nav> --}}
+<div id="parkPage">
 
-       <!-- Title -->
-      {{!-- <div class="row"> --}}
-        {{!-- <div class="col s12" id="titleColumn"> --}}
-          {{!-- <h3>Trail Blazer</h3> --}}
-          <!-- State Selection -->
-{{!--           <form method="GET" action='/parks'>
+  <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">{{user.username}}</a></li>
+      <li><a href="/login">Log In</a></li>
+      <li><a href="/signup">Sign Up</a></li>
+    </ul>
+    <nav class="N/A transparent z-depth-0">
+      <div class="nav-wrapper">
+      
+        <a href="/" class="brand-logo"><img src="/assets/css/img/logo.png"></a>
+
+        <div class="hide-on-med-and-down">
+        <form method="GET" action='/parks'>
             <div class="input-field" id="stateSelection">
             <select name='state'>
               <option value="" disabled selected>Select State</option>
@@ -53,48 +46,46 @@
             </select>
             <button type ='submit' value='submit'class="waves-effect waves-light btn N/A transparent" id="submitBtn" >Submit</button>
           </div>
-     </form>  --}}
-{{!--       </div>  
-    </div>
-  </div> --}}
-
-
-
-<div class="container" id="parkPage">
-  <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">{{user.username}}</a></li>
-      <li><a href="/auth/facebook">Log In</a></li>
-      <li><a href="/signup">Sign Up</a></li>
-    </ul>
-    <nav class="N/A transparent z-depth-0">
-      <div class="nav-wrapper">
-        <!-- <a href="#!" class="brand-logo">Logo</a> -->
+     </form> 
+     </div>
         <ul class="right hide-on-med-and-down">
           <!-- Dropdown Trigger -->
           <li><a class="dropdown-button" href="/" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
     </nav>
-  {{!-- <div class="container" id="parkDisplay"> --}}
+
     <div class="row">
       <h3 id="parkTitle">Parks</h3>
 
       <!-- Park Results -->
       {{#each park_data}}
       <div class="col s4 parkColumn" id="parkContainer">
+       <span class="info"><a href="#parkInfoModal" id="modalBtn"><i class="small material-icons" id="trailsBtn">info_outline</i></a></span>
         <h6>{{this.park_name}}</h6>
         <p>{{this.description}}</p>
-        {{!-- <a class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">More Info</a> --}}
-        
         <form action='/api/{{this.latitude}}/{{this.longitude}}'>
-{{!--         <input type="hidden" name="longitude" value="{{this.longitude}}">
-        <input type="hidden" name="latitude" value="{{this.latitude}}"> --}}
         <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
         </form>
       </div>
       {{/each}}
     </div>
-  {{!-- </div> --}}
   </div>
 
-
+ <div id="parkInfoModal" class="modal">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat right"><i class="large material-icons" >toc</i></a>
+        <!-- Modal Content -->
+        <div class="modal-content">
+          <!--Beginning of Google Maps ADDED-->
+          <div class="row" id="mapRow">
+            <div class="col-xs-6" id="map"></div>
+            <div class="col-xs-6" id="weather">
+              <h3>Weather Info</h3>
+              <p>{{this.weather_info}}</p>
+              <br>
+              <h4>Current Weather</h4>
+              <div class='weather-widget'></div>
+            </div>
+          </div>
+        </div> 
+      </div>
