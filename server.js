@@ -15,7 +15,7 @@ var FacebookStrategy = require('passport-facebook');
 
 /*model sync */
 const models = require('./models');
-models.sequelize.sync();
+models.sequelize.sync({force:true});
 
 /*use of /public content */
 app.use(express.static(__dirname + '/public'));
@@ -68,5 +68,5 @@ var nps = require('./database/nps.js');
 /*starting express server*/
 app.listen(port, function(){
 	console.log("I am working")
-	// nps.NPSaxios();
+	nps.NPSaxios();
 });

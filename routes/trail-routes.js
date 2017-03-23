@@ -6,7 +6,16 @@ var axios = require('axios');
 
 /*routes*/
 module.exports = function(app) {
-    app.get("/api/:latitude/:longitude", function(req, res) {
+   
+    app.get('/trails', function(req, res){
+        models.Trail.findAll({})
+        .then(function(trail_data){
+            res.render('trails', {trail_data});
+
+        })
+    });
+    
+    app.post("/api/:latitude/:longitude", function(req, res) {
         var latitude = req.params.latitude;
         var longitude = req.params.longitude;
         axios.get("https://trailapi-trailapi.p.mashape.com/?lat=" + latitude + "&limit=25&lon=" + longitude + "&q[activities_activity_type_name_eq]=hiking&radius=50",{
@@ -16,15 +25,21 @@ module.exports = function(app) {
                 "Accept": "text/plain"
             }
         }).then(function(result){
+
             console.log(result.data.places);
             var places = result.data.places
             for(i=0; i< places.length; i++){
-                models.Trail.create{
-                    
-                }
-            }
+                models.Trail.create({
+                    trail_id: places[i].unique_id,
+                    trail_name: places[i].activities[0].name,
+                    description:places[i].activities[0].description,
+                    latitude: places[i].lat,
+                    longitude: places[i].lon,
+                    distance: places[i].activities[0].length,
+                    url: places[i].activities[0].url
 
-            res.end();
+                });
+            }
         });
         res.redirect('/trails')
         // unirest.get("https://trailapi-trailapi.p.mashape.com/?lat=" + latitude + "&limit=25&lon=" + longitude + "&q[activities_activity_type_name_eq]=hiking&radius=50")
@@ -47,4 +62,10 @@ module.exports = function(app) {
         //     });
 
     });
+
+
+ 
+    
+
+
 }
