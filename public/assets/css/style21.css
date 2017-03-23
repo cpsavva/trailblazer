@@ -103,6 +103,10 @@ nav-wrapper{
   color:#d8b31c;
 }
 
+#parkInfoModal p{
+  font-size:16px;
+}
+
 
 
 /*================================Parralax Styling================*/
@@ -231,10 +235,10 @@ nav-wrapper{
 /*===================Map Div=====================*/
 
 #map{
-  margin-left:30px;
-  padding:10px;
-  width:50%;
-  height:500px;
+  /*margin-left:30px;
+  padding:10px;*/
+  width:300px;
+  height:300px;
 }
 
 

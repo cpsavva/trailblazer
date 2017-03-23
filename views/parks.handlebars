@@ -68,11 +68,36 @@
         <button class="waves-effect waves-light btn N/A transparent" class="parkSubmitBtn" href="#parallax2">Trails</button>
         </form>
       </div>
+
+      {{!-- park modal --}}
+      <div id="parkInfoModal" class="modal">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat right"><i class="large material-icons" >toc</i></a>
+            <!-- Modal Content -->
+            <div class="modal-content">
+              <!--Beginning of Google Maps ADDED-->
+              <div class="row" id="mapRow">
+                <div class="col s6" id="map"></div>
+                {{!-- <div>
+                <p>{{this.latitude}}</p>
+                <p>{{this.longitude}}</p>
+                </div> --}}
+                <div class="col s6" id="weather">
+                  <h3>Weather Info</h3>
+                  <p>{{this.weather_info}}</p>
+                  <br>
+                  <h4>Current Weather</h4>
+                  <div class='weather-widget'></div>
+                </div>
+              </div>
+            </div> 
+      </div>
+      {{!-- End Park Modal --}}
       {{/each}}
     </div>
   </div>
-
- <div id="parkInfoModal" class="modal">
+  
+  {{!-- park modal --}}
+  {{!-- <div id="parkInfoModal" class="modal">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat right"><i class="large material-icons" >toc</i></a>
         <!-- Modal Content -->
         <div class="modal-content">
@@ -88,4 +113,5 @@
             </div>
           </div>
         </div> 
-      </div>
+  </div> --}}
+  {{!-- End Park Modal --}}
