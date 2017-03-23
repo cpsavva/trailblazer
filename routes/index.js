@@ -63,7 +63,7 @@ routes.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     console.log('in auth callback');
-    // Successful authentication, redirect home.
+    // Successful authenticatzion, redirect home.
     res.redirect('/');
   });
 
