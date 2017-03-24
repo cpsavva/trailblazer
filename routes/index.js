@@ -12,7 +12,7 @@ routes.get('/', (req, res) => {
 
 //login a new user
 routes.post('/authenticate', passport.authenticate('local', {
-  successRedirect: '/index',
+  successRedirect: '/',
   failureRedirect: '/login'
 }));
 
@@ -27,6 +27,28 @@ routes.get('/signup', function(req, res) {
   res.render('signup');
 });
 
+// WORKING ON THIS POST ROUTE..
+// ===================================================================================
+routes.post('/submitUser', function(req, res) {
+  console.log("jlsdkfjslkfjls");
+  // console.log(req.body);
+
+  // if (req.body.user == 'Boris') {
+  //   res.redirect('/BORIS!!!!');
+  // }
+
+  db.User.find({where: {username: req.body.username}}).then(function(user) {
+  
+  if(!user){
+    return res.redirect('/signup');
+  } else {
+    res.redirect('/');
+  }
+  
+});
+});
+// ===================================================================================
+
 //create a new user
 routes.post('/signup', function(req, res) {
   db.User.find({where: {username: req.username}}).then(function(user) {
@@ -36,7 +58,7 @@ routes.post('/signup', function(req, res) {
           if (err) {
             return res.redirect('/signup');
           } else {
-            res.redirect('/index');    
+            res.redirect('/');    
           }
         });
         

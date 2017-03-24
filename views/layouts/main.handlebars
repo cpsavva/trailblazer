@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  
+
     {{{ body }}}
     {{!-- Modal --}}
     <!-- Modal Structure -->
@@ -38,17 +38,17 @@
         </div>
         <div class="row" id="loginRow">
           <div class="col s6" id="manualInput">
-            <form id="loginForm">
+            <form id="loginForm" action="/submitUser" method="post">
               <div class="row">
                 <div class="input-field">
-                  <input id="name" type="text" class="validate" required="required">
+                  <input id="name" type="text" class="validate" name="username" required="required">
                   <label for="name">Username</label>
                 </div>
                 <div class="input-field">
-                  <input id="name" type="text" class="validate" required="required">
+                  <input id="pass" type="text" class="validate" name="password" required="required">
                   <label for="name">Password</label>
                 </div>
-                <a class="waves-effect waves-light btn" href="#modal1"  id = "submit">Submit</a>
+                <button class="waves-effect waves-light btn btn-primary blue darken-3" type="submit" id="submit">Submit</button>
               </div>
             </form>
           </div>
@@ -61,7 +61,7 @@
         {{!-- footer --}}
         <div class="row" id="footerRow">
           <div class="col s12">
-            <p>Don't Have an account? &nbsp;<span><a href="/signup">Register here</a></span></p>
+            <h6>Don't Have an account? &nbsp;<span><a href="/signup">Register here</a></span></h6>
           </div> 
         </div>
       </div> 
