@@ -5,6 +5,7 @@
     
   <div class="row" id="trailsRow">
 
+<<<<<<< HEAD
     <h3 id="trailTitle">Trails</h3>
 
     {{#each results}}
@@ -14,6 +15,27 @@
         <p class="description">{{this.description}}</p>
       </div>
     {{/each}}
+=======
+      <h3 id="trailTitle">Trails</h3>
+      
+      <h4>{{user.username}}</h4>
+
+        {{#each results}}
+        <div class="col s4 trailsColumn" id='trailsContainer'> 
+          <span class="info"><a target='_blank' href="{{this.url}}"><i class="small material-icons" id="trailsBtn">info_outline</i></a></span>
+          <h6>{{this.trail_name}}</h6>
+          <p class="description">{{this.description}}</p>
+
+          {{!-- {{#if user.username}} --}}
+          <form action="/{{user.username}}?_method=PUT" method="POST">
+            <input type="hidden" name="id" value="{{this.id}}">               
+            <button class="fav_btn" type="submit">Add to favorites!</button>      
+          </form>
+          {{!-- {{/if}} --}}
+        </div>
+        {{/each}}
+    </div>
+>>>>>>> 296034d621bf5888657bc2040784a2ce7c7f4721
   </div>
 </div>
 

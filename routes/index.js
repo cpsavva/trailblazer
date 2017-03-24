@@ -4,7 +4,7 @@ const passport = require('passport');
 const db = require('../models');
 
 routes.get('/', (req, res) => {
-  console.log('user', req.user);
+  //console.log('user', req.user);
   res.render('index', {
     user: req.user
   });
