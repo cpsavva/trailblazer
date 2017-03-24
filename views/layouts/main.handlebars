@@ -130,6 +130,23 @@
       marker.setMap(map);
       // return marker;    
     }
+
+    function findWeather(lat,lng){
+      var degrees;
+        $.ajax({
+          url: "http://api.wunderground.com/api/7d4c2ccc48b6acd9/conditions/q/" + lat + "," + lng + ".json",
+          method: 'GET',
+          datatype: "json"
+      }).done(function(wonder) {
+          console.log(wonder.current_observation.temp_f);
+          var degrees = Math.floor(wonder.current_observation.temp_f);
+          console.log(degrees);
+          return degrees;
+        });
+      // console.log(degrees);
+      
+    }
+
     $(document).ready(function(){
       $('.parallax').parallax();
       $('.modal').modal({
@@ -153,9 +170,27 @@
         latitude = $(this).parent().parent().find('.latitude').text();
         longitude = $(this).parent().parent().find('.longitude').text();
         makeMarker(parseFloat(latitude),parseFloat(longitude));
-        map.setCenter({lat: parseFloat(latitude), lng: parseFloat(longitude)}); 
+        map.setCenter({lat: parseFloat(latitude), lng: parseFloat(longitude)});
+
+        
         var weather = $(this).parent().parent().find('.weatherInfo').text();
-        $("#weatherDisplay").html(weather);     
+        $("#weatherDisplay").html(weather);  
+
+        var lat=parseFloat(latitude);
+        var lng=parseFloat(longitude);
+        $.ajax({
+          url: "http://api.wunderground.com/api/7d4c2ccc48b6acd9/conditions/q/" + lat + "," + lng + ".json",
+          method: 'GET',
+          datatype: "json"
+      }).done(function(wonder) {
+          console.log(wonder.current_observation.temp_f);
+          var degrees = Math.floor(wonder.current_observation.temp_f);
+          degrees = degrees + "\xb0"+"F"
+          $(".weather-widget").html(degrees);
+        });
+
+
+
       });
     });     
   </script>
