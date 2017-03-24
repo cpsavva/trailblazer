@@ -1,18 +1,20 @@
-  <div class="trails" {{!-- id="parallax2" --}}>
- 
-    <div class="row" id="trailsRow">
-
-      <h3 id="trailTitle">Trails</h3>
-      <h4></h4>
-
-        {{#each results}}
-        <div class="col s4 trailsColumn" id='trailsContainer'> 
-          <span class="info"><a target='_blank' href="{{this.url}}"><i class="small material-icons" id="trailsBtn">info_outline</i></a></span>
-          <h6>{{this.trail_name}}</h6>
-          <p class="description">{{this.description}}</p>
-        </div>
-        {{/each}}
-    </div>
+<div id="trails">
+  <div class="parallax">
+    <img id="trailImg" src="/assets/css/img/trail.jpg">
   </div>
+    
+  <div class="row" id="trailsRow">
+
+    <h3 id="trailTitle">Trails</h3>
+
+    {{#each results}}
+      <div class="col s4 trailsColumn" id='trailsContainer'> 
+        <span class="info"><a target='_blank' href="{{this.url}}"><i class="small material-icons" id="trailsBtn">info_outline</i></a></span>
+        <h6>{{this.trail_name}}</h6>
+        <p class="description">{{this.description}}</p>
+      </div>
+    {{/each}}
+  </div>
+</div>
 
      
