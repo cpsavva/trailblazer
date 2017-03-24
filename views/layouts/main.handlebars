@@ -100,13 +100,18 @@
         });
       infoWindow = new google.maps.InfoWindow();
 
+      
+    };
+    
+    function makeMarker (lat, lng){
       var marker = new google.maps.Marker({
-        position: latlng,
+        position: {lat:lat, lng:lng},
         map: map,
         title: 'Hello World!'
       });
-    };
-    
+      marker.setMap(map);
+      // return marker;    
+    }
     $(document).ready(function(){
       $('.parallax').parallax();
       $('.modal').modal({
@@ -129,6 +134,7 @@
         console.log($(this).parent('#parkContainer'));
         latitude = $(this).parent().parent().find('.latitude').text();
         longitude = $(this).parent().parent().find('.longitude').text();
+        makeMarker(parseFloat(latitude),parseFloat(longitude));
         map.setCenter({lat: parseFloat(latitude), lng: parseFloat(longitude)}); 
         var weather = $(this).parent().parent().find('.weatherInfo').text();
         $("#weatherDisplay").html(weather);     
