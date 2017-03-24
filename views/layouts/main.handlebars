@@ -137,15 +137,15 @@
         $("#parallax2").show();
       });
 
-      // $(".modalBtn").click(function(){
-      //   console.log("I Clicked The Modal");
-      //   console.log($(this).parent('#parkContainer'));
-      //   var latitude = $(this).parent().parent().find('.latitude').text();
-      //   var longitude = $(this).parent().parent().find('.longitude').text();
-      //   map.setCenter({lat: parseFloat(latitude), lng: parseFloat(longitude)});        
-
-      //   // console.log($( ".modalBtn" ).find( "#latitude" ).text());
-      // });
+      $(".modalBtn").click(function(){
+        console.log("I Clicked The Modal");
+        console.log($(this).parent('#parkContainer'));
+        var latitude = $(this).parent().parent().find('.latitude').text();
+        var longitude = $(this).parent().parent().find('.longitude').text();
+        map.setCenter({lat: parseFloat(latitude), lng: parseFloat(longitude)}); 
+        var weather = $(this).parent().parent().find('.weather').text();
+        $("#weatherDisplay").html(weather);     
+      });
     });     
   </script>
   <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtd0Rm6EoowNo16BoCBpQwxqgv40Z5P0U&libraries=places&callback=initMap"></script>
