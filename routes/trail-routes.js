@@ -42,7 +42,7 @@ module.exports = function(app) {
 
     });
 
-    routes.post('/favorites', function(req, res) {
+    app.post('/favorites', function(req, res) {
         db.User.find({ where: { username: req.username } }).then(function(user) {
             if (user) {
                 db.UserFavorites.create({ username: req.body.username,fav_trail:req.body.trail_name}).then(function(fav) {
