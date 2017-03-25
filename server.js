@@ -68,5 +68,5 @@ var nps = require('./database/nps.js');
 /*starting express server*/
 app.listen(port, function(){
 	console.log("I am working")
-	nps.NPSaxios();
+	// nps.NPSaxios();
 });
