@@ -13,43 +13,30 @@ routes.get('/', (req, res) => {
 //login a new user
 routes.post('/authenticate', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/login'
+  failureRedirect: '/signup'
 }));
 
 
 routes.get('/logout', middleware.destroySession);
 
-routes.get('/login', function(req, res) {
-  res.render('login');
-});
-
 routes.get('/signup', function(req, res) {
   res.render('signup');
 });
 
-// WORKING ON THIS POST ROUTE..
-// ===================================================================================
+//POST route for the modal log-in
 routes.post('/submitUser', function(req, res) {
-  console.log("jlsdkfjslkfjls");
-  // console.log(req.body);
-
-  // if (req.body.user == 'Boris') {
-  //   res.redirect('/BORIS!!!!');
-  // }
-
   db.User.find({where: {username: req.body.username}}).then(function(user) {
-  
-  if(!user){
-    return res.redirect('/signup');
-  } else {
-    res.redirect('/');
-  }
-  
+    req.logIn(user, function(err) {
+      if (err) {
+        return res.redirect('/signup');
+      } else {
+        res.redirect('/');    
+      }
+    });
+  });
 });
-});
-// ===================================================================================
 
-//create a new user
+//POST route for a new user
 routes.post('/signup', function(req, res) {
   db.User.find({where: {username: req.username}}).then(function(user) {
     if (!user) {
