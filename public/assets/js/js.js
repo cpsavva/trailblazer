@@ -57,7 +57,7 @@
         var lat=parseFloat(latitude);
         var lng = parseFloat(longitude);
        $.ajax({
-           url: "http://api.wunderground.com/api/7d4c2ccc48b6acd9/conditions/q/" + lat + "," + lng + ".json",
+           url: "https://api.wunderground.com/api/7d4c2ccc48b6acd9/conditions/q/" + lat + "," + lng + ".json",
            method: 'GET',
            datatype: "json"
        }).done(function(wonder) {
