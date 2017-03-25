@@ -3,12 +3,14 @@
     <img id="trailImg" src="/assets/css/img/trail.jpg">
   </div>
     
-  <div class="row" id="trailsRow">
-    <button id="go" onclick="goBack()">Go Back</button>
+  <div class="row">
+    {{!-- <button id="go" onclick="goBack()">Go Back</button> --}}
     <h3 id="trailTitle">Trails</h3>
+    <button id="go" onclick="goBack()" class="waves-effect waves-light btn N/A transparent">Go Back</button>
+  </div>
 
 
-
+  <div class="row" id="trailsRow">
     {{#each results}}
       <div class="col s4 trailsColumn" id='trailsContainer'> 
         <span class="info"><a target='_blank' href="{{this.url}}"><i class="small material-icons" id="trailsBtn">info_outline</i></a></span>

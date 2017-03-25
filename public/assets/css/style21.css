@@ -36,6 +36,7 @@ h3{
   padding:0px;
   margin:0px;
   width:100%;
+  text-align:center;
 }
 
 .row .col.s12{
@@ -358,6 +359,8 @@ nav-wrapper{
 }
 
 #go{
-  color: pink;
+  color: white;
 }
+
+
 
