@@ -1,0 +1,6 @@
+heroku create (creates git repository in heroku)
+the website given
+git push heroku master
+//heroku will do npm install
+heroku open
+heroku config
