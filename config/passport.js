@@ -16,15 +16,14 @@ passport.deserializeUser(function(user, done) {
 
 
 passport.use(new LocalStrategy(function(username, password, done) {
-  console.log('username', username);
-  console.log('password', password);
+  
   db.User.findOne({where: {username: username}}).then(function(user) {
     if (!user) {
       return done(null, false, { message: 'Incorrect credentials.' })
     }
     var passwd = user ? user.password: '';
     db.User.validPassword(password, passwd, function(err, found) {
-      console.log('passport', err, user);
+      
       done(err, found ? user : false);
     });    
   });
@@ -39,7 +38,7 @@ passport.use(new FacebookStrategy({
     profileFields: ['id', 'displayName', 'email']
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log('profile', profile);
+
     db.User.findOne({where: {facebookId: profile.id}}).then(function(user) {
       if (!user) {
         db.User.create({facebookRefreshToken: refreshToken, facebookAccessToken: accessToken, facebookId: profile.id, username: profile.username || profile.emails[0].value, password: 'some random password hash' }).then(function(user) {

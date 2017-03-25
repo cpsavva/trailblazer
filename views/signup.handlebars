@@ -1,3 +1,9 @@
+
+<div class="container">
+<nav class="N/A transparent z-depth-0">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo"><img src="/assets/css/img/logo.png"></a>
+  </nav>
 <div class='row'>
 <div class="col s2"></div>
 <div class="col s8">
@@ -14,7 +20,22 @@
   </form>
 </div>
 
-
-  <div class="col s2"></div>
+  <div class='row signup_div'>
+    <div class="col s2"></div>
+    <div class="col s8">
+      <h2>Signup</h2>
+      <form action="/signup" method="post">
+        <label>Username</label>
+        <input  id="username" name="username" placeholder="Username" type="text" />
+        <label>Password</label>
+        <input id="password" name="password" placeholder="Password" type="password" >
+        <div class="form-actions">
+          <button class="waves-effect waves-light btn" type="submit" id="signUpSubmit">Sign Up</button>
+          <div class="clearfix"></div>
+        </div>
+      </form>
+    </div>
+    <div class="col s2"></div>
+  </div>
 
   </div>

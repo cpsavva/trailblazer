@@ -1,3 +1,7 @@
+.signup_div {
+  color: black;
+}
+
 body{
   /*background-color: #0d0d0d;*/
   background-color: #282828;
@@ -115,7 +119,11 @@ nav-wrapper{
   font-size:16px;
 }
 
-
+#loginModal.open {
+  max-height: 75% !important;
+  margin-top: 80px;
+  width: 75% !important;
+}
 
 /*================================Parralax Styling================*/
 .parallax-container{

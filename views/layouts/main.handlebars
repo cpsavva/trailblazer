@@ -1,60 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>TrailBlazer</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>TrailBlazer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Emily Sun Portfolio</title>
     <!--Jquery-->
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-     <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
-
+    <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
     <!--javascript file-->
     <script type="text/javascript" src="/assets/js/js.js"></script>
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link href="/assets/css/style21.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-
-     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="/auth/facebook">{{user.username}}</a></li>
-        <li><a href="/login">Log In</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/!#">Log Out</a></li> 
-      </ul>
-
-      <ul id="dropdown2" class="dropdown-content">
-        {{!-- <li><a href=""><i class="material-icons left">view_module</i></a></li> --}}
-        <li><a href="/auth/facebook">{{user.username}}</a></li>
-        <li><a href="">Email: {{user.email}}</a></li>
-        <li><a href="">Favorties: </a></li>
-      </ul>
-
-
-      <nav class="N/A transparent z-depth-0">
-        <div class="nav-wrapper">
-
-          <ul class="left hide-on-med-and-down">
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><i class="material-icons left">view_headline</i></a></li>
-          </ul>
-
-          <a href="/" class="brand-logo"><img src="/assets/css/img/logo.png"></a>
-         <ul class="right hide-on-med-and-down">
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account Access<i class="material-icons right">arrow_drop_down</i></a></li>
-          </ul>
-        </div>
-      </nav>
-
-	{{{ body }}}
+  </head>
+  <body>
+    {{{ body }}}
     {{!-- Modal --}}
     <!-- Modal Structure -->
     <div id="loginModal" class="modal">
@@ -69,20 +35,19 @@
             <p>View your favourite trails</p>
           </div>
         </div>
-
         <div class="row" id="loginRow">
           <div class="col s6" id="manualInput">
-            <form id="loginForm">
+            <form id="loginForm" action="/submitUser" method="post">
               <div class="row">
                 <div class="input-field">
-                  <input id="name" type="text" class="validate" required="required">
+                  <input id="name" type="text" class="validate" name="username" required="required">
                   <label for="name">Username</label>
                 </div>
                 <div class="input-field">
-                  <input id="name" type="text" class="validate" required="required">
+                  <input id="pass" type="password" class="validate" name="password" required="required">
                   <label for="name">Password</label>
                 </div>
-                <a class="waves-effect waves-light btn" href="#modal1"  id = "submit">Submit</a>
+                <button class="waves-effect waves-light btn btn-primary blue darken-3" type="submit" id="submit">Submit</button>
               </div>
             </form>
           </div>
@@ -95,12 +60,13 @@
         {{!-- footer --}}
         <div class="row" id="footerRow">
           <div class="col s12">
-            <p>Don't Have an account? &nbsp;<span><a href="/signup">Register here</a></span></p>
-          </div> 
+            <h6>Don't Have an account? &nbsp;<span><a href="/signup">Register here</a></span></h6>
+          </div>
         </div>
-      </div> 
+      </div>
     </div>
     {{!-- End Of Modal --}}
+
 </body>
   <!--<script type="text/javascript">
   //   function makeMarker (lat, lng){
@@ -159,4 +125,4 @@
   //   });     
   </script>-->
   <script type ="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtd0Rm6EoowNo16BoCBpQwxqgv40Z5P0U&libraries=places&callback=initMap"></script>
-	</html>
+</html>
