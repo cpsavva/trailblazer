@@ -9,7 +9,7 @@
         // center: {lat:latitude, lng: longitude},
         // center: {lat: -34.397, lng: 150.644},
         //Need to find someway to grab latitude and longtitude
-        zoom:15
+        zoom:18
         });
       infoWindow = new google.maps.InfoWindow();
 
